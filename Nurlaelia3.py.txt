@@ -1,0 +1,56 @@
+# buatlah satu program barang sebagi berikut:
+pilihan = 0
+barang = ["meja","kursi","buku","pulpen","spidol"]
+while pilihan <= 1:
+    print("selesai")
+    print("1. mencetak nilai dalam list")
+    print("2. menambahkan nilai atau nama ke dalam list")
+    print("3. menghapus nama dari list")
+    print("4. mengubah nama dari data dalam list")
+    print("5. menampilkan semua barang ")
+    print("6. mengetahui apakah barang sudah ada dalam list atau belum")
+    print("7. menampilkan index barang tertentu")
+    menu_item = int(input("pilih menu: "))
+    if menu_item == 1 :
+        current = 0
+        if len(barang) > 0:
+            while current < len(barang):
+                print(current, ".", barang[current])
+        else:
+            print("list ksong")
+
+    elif menu_item == 2:
+        name = input("masukkan nama: ")
+        barang.append(name)
+        print(barang)
+
+    elif menu_item == 3:
+        del_name = input("masukkan nama yang ingin dihapus: ")
+        if del_name in barang:
+            item_number = barang.index(del_name)
+            del barang[item_number]
+            print(barang)
+
+    elif menu_item == 4:
+        old_name = input("nama yang ingin diubah")
+        if old_name in barang:
+            item_number = barang.index(old_name)
+            new_name = input("nama baru : ")
+            nama_barang[item_number] = new_name
+            print(barang)
+        else:
+            print(old_name, "tidak ditemukan")
+
+    elif menu_item == 5:
+        print(barang)
+        barang_yang_ingin_dicari = input("masukkan nama barang yang dicari : ")
+        print(barang_yang_ingin_dicari, "berada pada index", barang.index(barang_yang_ingin_dicari))
+
+    elif menu_item == 6:
+        barang_yang_ingin_dicari = input("masukkan nama barang : ")
+        if barang_yang_ingin_dicari in barang:
+
+            print("barang ini terdapat dalam barang")
+        elif barang_yang_ingin_dicari not in barang :
+            print("barang ini tidak terdapat dalam barang")
+        
